@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Panneau d'administration{% endblock %}
+{% block content %}
+<h1 class="mb-4">Panneau d'Administration</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Contenu</th>
+            <th>Utilisateur</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for post in posts %}
+        <tr>
+            <td>{{ post.id }}</td>
+            <td>{{ post.content }}</td>
+            <td>{{ post.user.username }}</td>
+            <td>{{ post.created_at.strftime('%d/%m/%Y %H:%M') }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

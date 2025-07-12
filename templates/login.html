@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block head %}
+<style>
+  /* Glassmorphism style for the login form */
+  body {
+    background-color: #080710;
+  }
+  .background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+  }
+  .background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+  }
+  .shape:first-child{
+    background: linear-gradient(#1845ad, #23a2f6);
+    left: -80px;
+    top: -80px;
+  }
+  .shape:last-child{
+    background: linear-gradient(to right, #ff512f, #f09819);
+    right: -30px;
+    bottom: -80px;
+  }
+  form.login-form {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 50px 35px;
+    background-color: rgba(255,255,255,0.13);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    color: white;
+  }
+  form.login-form h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 42px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  input.form-control {
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    color: white;
+  }
+  input::placeholder {
+    color: #e5e5e5;
+  }
+  button.btn-primary {
+    background-color: #ffffff;
+    color: #080710;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 30px;
+  }
+  .social {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .social div {
+    background-color: rgba(255,255,255,0.27);
+    border-radius: 3px;
+    padding: 10px 15px;
+    color: #eaf0fb;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+  }
+  .social div:hover {
+    background-color: rgba(255,255,255,0.47);
+  }
+  .social i {
+    margin-right: 5px;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+
+<form method="POST" class="login-form" novalidate>
+  <h3>Login Here</h3>
+
+  {{ form.hidden_tag() }}
+
+  <div class="mb-3">
+    <label for="username">{{ form.username.label.text }}</label>
+    {{ form.username(class="form-control", id="username", placeholder="Email or Phone") }}
+  </div>
+
+  <div class="mb-3">
+    <label for="password">{{ form.password.label.text }}</label>
+    {{ form.password(class="form-control", id="password", placeholder="Password") }}
+  </div>
+
+  {{ form.submit(class="btn btn-primary w-100") }}
+
+
+</form>
+{% endblock %}

@@ -1,0 +1,83 @@
+/* Style général */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #2c3e50;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand,
+.nav-link {
+    color: #ecf0f1 !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #1abc9c !important;
+}
+
+/* Container */
+.container {
+    margin-top: 30px;
+}
+
+/* Cards for posts */
+.post-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #1abc9c;
+    border: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #16a085;
+}
+
+/* Forms */
+.form-control {
+    border-radius: 8px;
+    box-shadow: none;
+    border: 1px solid #ced4da;
+}
+
+textarea.form-control {
+    resize: none;
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+}
